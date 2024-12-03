@@ -11,15 +11,20 @@
     */
 
     // Entrada de dados
-    
+    let peso = parseFloat(prompt("Digite o seu peso (kg):"));
+    let altura = parseFloat(prompt("Digite a sua altura (m):"));
 
 
     // Processamento
-    
-    
+    let imc = peso / altura;
+
+    let mensagem = imc < 18.5 ? "Abaixo do peso"
+        : imc >= 18.5 && imc < 25 ? "Peso normal"
+        : imc >= 25 && imc < 30 ? "Sobrepeso"
+        : "Obesidade";
     
     // Saída de dados
-    
+    document.write(mensagem);
 
 
 </script>
