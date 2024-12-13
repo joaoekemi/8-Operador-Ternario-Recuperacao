@@ -7,14 +7,19 @@
     */
 
     // Entrada de dados
-    
+    const hora = parseInt(prompt("Informe a hora atual:"));
 
 
-    // Processamento
-    
-    
-    
-    // Saída de dados
+    // Processamento & Saída de dados
+    document.write(`Você está no período da 
+        ${
+            hora > 6 && hora <=12 ? "manhã"
+            : hora > 12 && hora <= 18 ? "tarde"
+            : hora > 18 && hora <= 23 && hora == 0 ? "noite"
+            : hora > 0 && hora <= 6 ? "madrugada"
+            : "eternidade"
+        }!
+    `);
     
 
 

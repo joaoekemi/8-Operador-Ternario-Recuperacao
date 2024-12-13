@@ -8,15 +8,46 @@
     */
 
     // ENTRADA DE DADOS
-    
+    let hemisferio = prompt("Informe em qual hemisfério você está (N/S):").toUpperCase();
+    let mes = parseInt(prompt("Informe o mês o qual está (1-Janeiro a 12-Dezembro):"));
 
     
     // PROCESSAMENTO
+    // Mês -> hemisfério // Contrário
     
+    let estacao = mes >= 1 && mes <= 3 ? (hemisferio == "S" ? "Verão" : "Inverno")
+      : mes >= 4 && mes <= 6 ? (hemisferio == "S" ? "Outono" : "Primavera")
+      : mes >= 7 && mes <= 9 ? (hemisferio == "S" ? "Inverno" : "Verão")
+      : mes >= 10 && mes <= 12 ? (hemisferio == "S" ? "Primavera" : "Outono")
+      : "Fim do mundo";
+
 
 
     // SAÍDA DE DADOS
-    
+    document.write(`Você encontra-se na estação: ${estacao}.`);
 
+    /*
+    Explicação desta resolução:
+
+    Esse modelo de resolução funciona super bem para casos específicos como este.
+    Puxando a estrutura padrão temos:
+
+        condição ? saida 1 : saida 2
+
+    Qual é a mudança? Na saída 1 adicino outra estrutura com saida 1 e 2, que fica:
+
+        condição 1 ? (condição 2 ? saida 1 : saida 2) : saida 2
+
+    O parênteses é meramente para organização visual.
+    Como a saída 2 utilizo para novas condições temos uma estrutura na forma:
+
+        condição 1 ? (condição 2 ? saida 1_2 : saida 2_2)
+        : condição 3 ? (condição 4 ? saida 1_4 : saida 2_4)
+        : condição 5 ? (condição 6 ? saida 1_6 : saida 2_6)
+        : condição 7 ? (condição 8 ? saida 1_8 : saida 2_8)
+        : saida 2_1;
+
+    A explicação dessa parte do material consta no material da lista 7, mesmo da lista 8.
+    */
 
 </script>

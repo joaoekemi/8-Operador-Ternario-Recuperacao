@@ -10,15 +10,17 @@
     */
 
     // Entrada de dados
-    
+    const valorCompra = parseFloat(prompt("Digite o valor da compra:"));
 
 
     // Processamento
-    
+    const desconto = valorCompra > 500 ? 15/100
+        : valorCompra > 300 ? 10/100
+        : 5/100;
     
     
     // Saída de dados
-    
+    document.write(`O valor da compra receberá ${( desconto*100 ).toFixed(0)}% passará de R$ ${valorCompra.toFixed(2)} para R$ ${( valorCompra * (1 - desconto) ).toFixed(2)}.`);
 
 
 </script>

@@ -10,15 +10,26 @@
     */
 
     // Entrada de dados
-    
+    const dias = parseInt(prompt("Por quantos dias ficará com a bicicleta?"));
 
 
     // Processamento
-
-    
+    const custoSDesc = 15 * dias;
+    const custoDia = dias <= 7 ? custoSDesc : custoSDesc * 20/100;
     
     // Saída de dados
-    
+    document.write(`O custo do aluguel sobre 
+        ${
+            dias > 1 ? `os ${dias} dias` : `o ${dia} dia`
+        } 
+        ${
+            dias > 7 ? 
+                `terá um desconto de ${( custoDia*100/custoSDesc ).toFixed(0)}% e passará de R$ ${custoSDesc} para `
+                // A expressão custoDia*100/custoSDesc calcula a porcentagem através da regra de 3, onde custoSDesc equivale a 100% e custoDia equivale a X%. 
+                
+                : `será de `
+        }
+        R$ ${custoDia}.`);
 
 
 </script>

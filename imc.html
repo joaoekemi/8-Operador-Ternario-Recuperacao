@@ -8,23 +8,27 @@
     - "Obesidade" (IMC >= 30).
 
     Use o operador ternário para exibir o IMC correspondente.
+    IMC = peso / (altura**2)
     */
 
     // Entrada de dados
-    let peso = parseFloat(prompt("Digite o seu peso (kg):"));
-    let altura = parseFloat(prompt("Digite a sua altura (m):"));
+    const peso = parseFloat(prompt("Digite o seu peso (em Kg):"));
+    const altura = parseFloat(prompt("Digite a sua altura (em metros):"));
 
 
     // Processamento
-    let imc = peso / altura;
-
-    let mensagem = imc < 18.5 ? "Abaixo do peso"
-        : imc >= 18.5 && imc < 25 ? "Peso normal"
-        : imc >= 25 && imc < 30 ? "Sobrepeso"
-        : "Obesidade";
+    let IMC = peso / (altura ** 2);
+    
     
     // Saída de dados
-    document.write(mensagem);
+    document.write(`A sua classificação é: 
+        ${
+            IMC < 18.8 ? "Abaixo do Peso"
+            : IMC >= 18.5 && IMC < 25 ? "Peso Normal"
+            : IMC >= 25 && IMC < 30 ? "Sobrepeso"
+            : "Obesidade"
+        }
+    `);
 
 
 </script>
